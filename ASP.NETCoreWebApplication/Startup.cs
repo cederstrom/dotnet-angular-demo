@@ -1,6 +1,6 @@
+using ASP.NETCoreWebApplication.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +23,7 @@ namespace ASP.NETCoreWebApplication
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
+            services.AddSingleton<ICounterStorage, InMemoryCounterStorage>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
