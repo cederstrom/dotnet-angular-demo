@@ -19,12 +19,12 @@ describe('CounterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should display a title', async(() => {
+  test('should display a title', async () => {
     const titleText = fixture.nativeElement.querySelector('h1').textContent;
     expect(titleText).toEqual('Counter');
-  }));
+  });
 
-  it('should start with count 0, then increments by 1 when clicked', async(() => {
+  test('should start with count 0, then increments by 1 when clicked', async () => {
     const countElement = fixture.nativeElement.querySelector('strong');
     expect(countElement.textContent).toEqual('0');
 
@@ -32,5 +32,6 @@ describe('CounterComponent', () => {
     incrementButton.click();
     fixture.detectChanges();
     expect(countElement.textContent).toEqual('1');
-  }));
+  });
+
 });
